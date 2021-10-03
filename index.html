@@ -25,36 +25,36 @@
                   <ul class="nav__list grid">
                       <li class="nav__item">
                         <a href="#home" class="nav__link">
-                            <i class="uil uil-estate"></i> Acceuil
+                            <i class="uil uil-estate nav__icon"></i> Acceuil
                         </a>
                       </li>
                       <li class="nav__item">
                         <a href="#about" class="nav__link">
-                            <i class="uil uil-user"></i> A propos
+                            <i class="uil uil-user nav__icon"></i> A propos
                         </a>
                       </li>
                       <li class="nav__item">
                         <a href="#skills" class="nav__link">
-                            <i class="uil uil-file-alt"></i> Compétences
+                            <i class="uil uil-file-alt nav__icon"></i> Compétences
                         </a>
                       </li>
                       <li class="nav__item">
                         <a href="#services" class="nav__link">
-                            <i class="uil uil-briefcase-alt"></i> Services
+                            <i class="uil uil-briefcase-alt nav__icon"></i> Services
                         </a>
                       </li>
                       <li class="nav__item">
                         <a href="#portfolio" class="nav__link">
-                            <i class="uil uil-scenery"></i> Portfolio
+                            <i class="uil uil-scenery nav__icon"></i> Portfolio
                         </a>
                       </li>
                       <li class="nav__item">
                         <a href="#contact" class="nav__link">
-                            <i class="uil uil-message"></i> Contact
+                            <i class="uil uil-message nav__icon"></i> Contact
                         </a>
                       </li>
                   </ul>
-                  <i class="uil uil-times nav__close" id="nav-close"></i>
+                  <i class="uil uil-times nav__close nav__icon" id="nav-close"></i>
               </div>
 
               <div class="nav__btns">
@@ -69,13 +69,98 @@
         <main class="main">
             <!--==================== HOME ====================-->
             <section class="home section" id="home">
-                
+               <div class="home__container container grid">
+                 <div class="home__content grid">
+                   <div class="home__social">
+                    <a href="https://www.linkedin.com/in/hicham-saidi-b14512221/" target="_blank" class="home__social-icon">
+                      <i class="uil uil-linkedin-alt"></i>
+                    </a>
+
+                    <a href="http://jojoworld.herokuapp.com/" target="_blank" class="home__social-icon">
+                      <i class="uil uil-dribbble"></i>
+                    </a>
+                     
+                    <a href="https://github.com/hicham68" target="_blank" class="home__social-icon">
+                      <i class="uil uil-github-alt"></i> 
+                    </a>
+                   </div>
+                   <div class="home__img">
+                    <svg class="home__blob" viewBox="0 0 200 187" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                      <mask id="mask0" mask-type="alpha">
+                          <path d="M190.312 36.4879C206.582 62.1187 201.309 102.826 182.328 134.186C163.346 165.547 
+                          130.807 187.559 100.226 186.353C69.6454 185.297 41.0228 161.023 21.7403 129.362C2.45775 
+                          97.8511 -7.48481 59.1033 6.67581 34.5279C20.9871 10.1032 59.7028 -0.149132 97.9666 
+                          0.00163737C136.23 0.303176 174.193 10.857 190.312 36.4879Z"/>
+                      </mask>
+                      <g mask="url(#mask0)">
+                          <path d="M190.312 36.4879C206.582 62.1187 201.309 102.826 182.328 134.186C163.346 
+                          165.547 130.807 187.559 100.226 186.353C69.6454 185.297 41.0228 161.023 21.7403 
+                          129.362C2.45775 97.8511 -7.48481 59.1033 6.67581 34.5279C20.9871 10.1032 59.7028 
+                          -0.149132 97.9666 0.00163737C136.23 0.303176 174.193 10.857 190.312 36.4879Z"/>
+                          <image class="home__blob-img" x='18' y='18' xlink:href="assets/img/profil.png"/>
+                      </g>
+                  </svg>
+                   </div>
+                   <div class="home__data">
+                      <h1 class="home__title">Salut je m'appelle Hicham Saidi</h1>
+                      <h3 class="home__subtitle">Développeur full stack</h3>
+                      <p class="home__description">Haut niveaux d'expérience en web design et développement, produit un travail de qualité !</p>
+                      <a href="#contact" class="button button--flex">
+                      Me contacter <i class="uil uil-message button__icon"></i>
+                      </a>
+                   </div>
+                 </div>
+                 <div class="home__scroll">
+                   <a href="#about" class="home__scroll-button button--flex">
+                    <i class="uil uil-mouse-alt home__scroll-mouse"></i>
+                    <span class="home__sroll-name">Tout défiler</span>
+                    <i class="uil uil-arrow-down home__scroll-arrow"></i>
+                   </a>
+                 </div>
+               </div>
             </section>
 
             <!--==================== ABOUT ====================-->
             <section class="about section" id="about">
+              <h2 class="section__title">A propos</h2>
+              <span class="section__subtitle">Introduction</span>
+              
+              <div class="about__container container grid">
+                <img src="assets/img/about.jpg" alt="" class="about__img">
+                
+                <div class="about__data">
+                   <p class="about__description">Développeur web, avec de grandes connaissances et plusieurs années d'expérience, travaille dans les techniques web, fournissant un travail de qualité.</p>
+                    
+                    <div class="about__info">
+                      <div>
+                        <span class="about__info-title">02+</span>
+                        <span class="about__info-name">Ans <br> d'expérience</span>
+                      </div>
+                    
 
-        
+                    
+                      <div>
+                        <span class="about__info-title">02+</span>
+                        <span class="about__info-name">Projets <br> compléter</span>
+                      </div>
+                    
+
+                    
+                      <div>
+                        <span class="about__info-title">02+</span>
+                        <span class="about__info-name">Travails <br> en entreprise</span>
+                      </div>
+                    
+
+                      
+                    </div>
+                    <div class="about__buttons">
+                      <a download="" href="assets/pdf/pdf-exemple.pdf" class="button button--flex">
+                        Télécharger CV <i class="uil uil-download-alt button__icon"></i>
+                      </a>
+                    </div>
+                </div>
+              </div>
             </section>
 
             <!--==================== SKILLS ====================-->
