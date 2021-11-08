@@ -322,6 +322,11 @@ header{
     background-color: transparent;
     color: var(--first-color-alt);
 }
+
+.buttonPost{
+    border: none;
+    
+}
 /*==================== ABOUT ====================*/
 .about__img{
     width: 200px;
@@ -708,9 +713,54 @@ header{
     justify-self: center;
 }
 /*==================== TESTIMONIAL ====================*/
+.testimonial__data,
+.testimonial__header{
+    display: flex;
+}
+
+.testimonial__data{
+    justify-content: space-between;
+    margin-bottom: var(--mb-1);
+}
 
 
+.testimonial__img{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin-right: var(--mb-0-75);
+}
+
+.testimonial_name{
+    font-size: var(--h3-font-size);
+    font-weight: var(--font-medium);
+}
+
+.testimonial__client{
+    font-size: var(--small-font-size);
+    color: var(--text-color-light);
+}
+
+.testimonial__description{
+    margin-bottom: var(--mb-2-5);
+}
+
+.testimonial__icon-star{
+    color: var(--first-color);
+}
+
+.swiper-container .swiper-pagination-testimonial{
+    bottom: 0;
+}
 /*==================== CONTACT ME ====================*/
+.contact__container{
+    row-gap: 3rem;
+}
+
+.contact__information{
+    display: flex;
+    margin-bottom: var(--mb-2);
+}
 
 
 /*==================== FOOTER ====================*/

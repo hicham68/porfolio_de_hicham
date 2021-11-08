@@ -50,7 +50,7 @@
                       </li>
                       <li class="nav__item">
                         <a href="#contact" class="nav__link">
-                            <i class="uil uil-message nav__icon"></i> Contact
+                            <i class="uil uil-message nav__icon"></i> Me Contacter
                         </a>
                       </li>
                   </ul>
@@ -768,38 +768,156 @@
                 <h2 class="section__title">Testimonial</h2>
                 <span class="section__subtitle">L'avis de mes clients</span>
 
-                <div class="testimonial__container container">
-                  <div>
+                <div class="testimonial__container container swiper-container">
+                  <div class="swiper-wrapper">
                      <!--==================== TESTIMONIAL 1 ====================-->
-                     <div class="testimonial__content">
+                     <div class="testimonial__content swiper-slide">
                        <div class="testimonial__data">
                          <div class="testimonial__header">
                            <img src="assets/img/testimonial1.jpeg" alt="" class="testimonial__img">
 
                            <div>
-                             <h3 class="testimonial__name">Sara Smith</h3>
+                             <h3 class="testimonial__name">Luidgi Clairboy</h3>
                              <span class="testimonial__client">Client</span>
                            </div>
                          </div>
-                         <i class="uil uil-star testimonial__icon-star"></i>
-                         <i class="uil uil-star testimonial__icon-star"></i>
-                         <i class="uil uil-star testimonial__icon-star"></i>
-                         <i class="uil uil-star testimonial__icon-star"></i>
-                         <i class="uil uil-star testimonial__icon-star"></i>
+                        
                          <div>
-
+                         <i class="uil uil-star testimonial__icon-star"></i>
+                         <i class="uil uil-star testimonial__icon-star"></i>
+                         <i class="uil uil-star testimonial__icon-star"></i>
+                         <i class="uil uil-star testimonial__icon-star"></i>
+                         <i class="uil uil-star testimonial__icon-star"></i>
                          </div>
                        </div>
-                     </div>
-                  </div>
-                </div>
 
-            </section>
+                       <p class="testimonial__description">Bonne impression de hicham
+
+                       </p>
+                     </div>
+
+                  <!--==================== TESTIMONIAL 2 ====================-->
+                  <div class="testimonial__content swiper-slide">
+                    <div class="testimonial__data">
+                      <div class="testimonial__header">
+                        <img src="assets/img/testimonial1.jpeg" alt="" class="testimonial__img">
+
+                        <div>
+                          <h3 class="testimonial__name">Luidgi Clairboy</h3>
+                          <span class="testimonial__client">Client</span>
+                        </div>
+                      </div>
+                     
+                      <div>
+                      <i class="uil uil-star testimonial__icon-star"></i>
+                      <i class="uil uil-star testimonial__icon-star"></i>
+                      <i class="uil uil-star testimonial__icon-star"></i>
+                      <i class="uil uil-star testimonial__icon-star"></i>
+                      <i class="uil uil-star testimonial__icon-star"></i>
+                      </div>
+                    </div>
+
+                    <p class="testimonial__description">Bonne impression de hicham
+
+                    </p>
+                  </div>
+
+                  <!--==================== TESTIMONIAL 3 ====================-->
+                  <div class="testimonial__content swiper-slide">
+                    <div class="testimonial__data">
+                      <div class="testimonial__header">
+                        <img src="assets/img/testimonial1.jpeg" alt="" class="testimonial__img">
+
+                        <div>
+                          <h3 class="testimonial__name">Luidgi Clairboy</h3>
+                          <span class="testimonial__client">Client</span>
+                        </div>
+                      </div>
+                     
+                      <div>
+                      <i class="uil uil-star testimonial__icon-star"></i>
+                      <i class="uil uil-star testimonial__icon-star"></i>
+                      <i class="uil uil-star testimonial__icon-star"></i>
+                      <i class="uil uil-star testimonial__icon-star"></i>
+                      <i class="uil uil-star testimonial__icon-star"></i>
+                      </div>
+                    </div>
+
+                    <p class="testimonial__description">Bonne impression de hicham
+
+                    </p>
+                  </div>
+                  </div>
+
+                  <!-- Add Pagination -->
+                  <div class="swiper-pagination swiper-pagination-testimonial"></div>
+                </div>
+              </section>
 
             <!--==================== CONTACT ME ====================-->
             <section class="contact section" id="contact">
+              <h2 class="section__title">Me contacter</h2>
+              <span class="section__subtitle">Get in touch</span>
 
-                ghghfhfhfhhfh
+              <div class="contact__container container grid">
+                <div>
+                  <div class="contact__information">
+                    <i class="uil uil-phone contact__icon"></i>
+
+                    <div>
+                      <h3 class="contact__title">Appeler moi</h3>
+                      <span class="contact__subtitle">07/69/69/07/64</span>
+                    </div>
+                  </div>
+
+                  <div class="contact__information">
+                    <i class="uil uil-envelope contact__icon"></i>
+
+                    <div>
+                      <h3 class="contact__title">Email</h3>
+                      <span class="contact__subtitle">hichampro68@gmail.com</span>
+                    </div>
+                  </div>
+
+                  <div class="contact__information">
+                    <i class="uil uil-map-marker contact__icon"></i>
+
+                    <div>
+                      <h3 class="contact__title">Localisation</h3>
+                      <span class="contact__subtitle">France - Illfurth 10 rue burnkirch</span>
+                    </div>
+                  </div>
+                </div>
+
+                <form action="contactform.php" class="contact__form grid" method="post">
+                  <div class="contact_inputs grid">
+                    <div class="contact__content">
+                      <label for="" class="contact__label">Nom</label>
+                      <input type="text" name="name" class="contact__input" placeholder="Nom complet">
+                    </div>
+                    <div class="contact__content">
+                      <label for="" class="contact__label">Email</label>
+                      <input type="email" name="mail" class="contact__input" placeholder="Adresse Mail">
+                    </div>
+                  </div>
+                  <div class="contact__content">
+                    <label for="" class="contact__label">Project</label>
+                    <input type="text" name="subject" class="contact__input" placeholder="Project">
+                  </div>
+                  <div class="contact__content">
+                    <label for="" class="contact__label">Message</label>
+                   <textarea name="message" id="" cols="0" rows="7" class="contact__input" placeholder="Message"></textarea>
+                  </div>
+
+                  <div>
+                    <button type="submit" name="submit" class="buttonPost">
+                    
+                      Envoyer Message
+                      <i class="uil uil-message button__icon"></i>
+                    </button>
+                  </div>
+                </form>
+              </div>
             </section>
         </main>
 
