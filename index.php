@@ -24,7 +24,7 @@
               <div class="nav__menu" id="nav-menu">
                   <ul class="nav__list grid">
                       <li class="nav__item">
-                        <a href="#home" class="nav__link">
+                        <a href="#home" class="nav__link active-link">
                             <i class="uil uil-estate nav__icon"></i> Acceuil
                         </a>
                       </li>
@@ -58,6 +58,9 @@
               </div>
 
               <div class="nav__btns">
+                <!-- Them change button -->
+                <i class="uil uil-moon change-theme" id="theme-button"></i>
+
                   <div class="nav__toogle" id="nav-toogle">
                     <i class="uil uil-apps"></i>  
                   </div>
@@ -910,7 +913,7 @@
                   </div>
 
                   <div>
-                    <button type="submit" name="submit" class="buttonPost">
+                    <button type="submit" name="submit" class="button">
                     
                       Envoyer Message
                       <i class="uil uil-message button__icon"></i>
@@ -923,12 +926,47 @@
 
         <!--==================== FOOTER ====================-->
         <footer class="footer">
+          <div class="footer__bg">
+            <div class="footer__container container grid">
+              <div>
+                <h1 class="footer__title">Hicham</h1>
+                <span class="footer__subtitle">Frontend développeur</span>
+              </div>
 
+              <ul class="footer__links">
+                <li>
+                  <a href="#services" class="footer__link">Services</a>
+                </li>
+                <li>
+                  <a href="#portfolio" class="footer__link">Portfolio</a>
+                </li>
+                <li>
+                  <a href="#contact" class="footer__link">Me contacter</a>
+                </li>
+              </ul>
+
+              <div class="footer__socials">
+                <a href="https://www.facebook.com/" target="_blank" class="footer__social">
+                <i class="uil uil-facebook-f"></i>
+                </a>
+                <a href="https://twitter.com/" target="_blank" class="footer__social">
+                <i class="uil uil-instagram"></i>
+                  </a>
+                  <a href="https://www.instagram.com/" target="_blank" class="footer__social">
+                  <i class="uil uil-twitter"></i>
+                  </a>
+              </div>
+            </div>
+
+            <p class="footer__copy">&#169; Hicham saidi All right reserved</p>
+          </div>
             
         </footer>
         
         <!--==================== SCROLL TOP ====================-->
-        
+        <a href="#" class="scrollup" id="scroll-up">
+        <i class="uil uil-arrow-up scrollup__icon"></i>
+        </a>
 
         <!--==================== SWIPER JS ====================-->
         <script src="assets/js/swiper-bundle.min.js"></script>
