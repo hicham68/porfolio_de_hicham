@@ -114,7 +114,7 @@
                    </div>
                  </div>
                  <div class="home__scroll">
-                   <a href="#about" class="home__scroll-button button--flex">
+                   <a href="#contact" class="home__scroll-button button--flex">
                     <i class="uil uil-mouse-alt home__scroll-mouse"></i>
                     <span class="home__sroll-name">Tout défiler</span>
                     <i class="uil uil-arrow-down home__scroll-arrow"></i>
@@ -158,7 +158,7 @@
                       
                     </div>
                     <div class="about__buttons">
-                      <a download="" href="assets/pdf/pdf-exemple.pdf" class="button button--flex">
+                      <a download="" href="assets/pdf/cv_hicham.pdf" class="button button--flex">
                         Télécharger CV <i class="uil uil-download-alt button__icon"></i>
                       </a>
                     </div>
