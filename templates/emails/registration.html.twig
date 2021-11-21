@@ -1,0 +1,19 @@
+{# templates/emails/registration.html.twig #}
+<h3>Offre d'emploi sur le porfolio!</h3>
+
+Salut luidgi tu as recu un message de  {{ name }}!  son adresse email est {{ email }}.
+
+{# example, assuming you have a route named "login" #}
+
+<h4>sujet :</h4>
+{{sujet}}
+<h4>message:</h4>
+{{ message }}
+
+{# {{ imageconvertie|base64_encode }} #}
+{# <img src="{{ imageconvertie|base64_encode }}"  alt=""/> #}
+{# <img src="data:image/jpeg;base64,{{ imageconvertie }}"  alt="" width="150" height="150"/> #}
+{# Makes an absolute URL to the /images/logo.png file #}
+Pour gèrer les profils, allez sur: <a href="{{ url('gestionnaire_professeur') }}">la page du gestionnaire</a>.
+<img src="{{ absolute_url(asset('https://www.cloudways.com/blog/wp-content/uploads/image2-97-1.png')) }}">
+<img src="public/img/images/vuejs_bootstrap.jpg"  style="width:600px; height:520px;" alt="Luidgi94" >

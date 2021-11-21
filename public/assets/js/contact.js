@@ -1,3 +1,11 @@
+let emailValidation = {
+  nom:false,
+  email:false,
+  projet: false,
+  message: false,
+  hello: 'hello'
+}
+
 console.log("Chargé");
 
 // Fonction qui 
@@ -6,26 +14,59 @@ function insertAfter(referenceNode, newNode) {
   referenceNode.parentNode.insertBefore(newNode, referenceNode.nextSibling);
 }
 
+function sendEmailConfirm(email){
+  console.log('ENVOI REQUETTE EMAIL');
+  const user = {
+          email: email.email,
+          firstName: email.nom,
+          message: email.message,
+          sujet: email.projet
+      };
+  const options = {
+          method: 'POST',
+          body: JSON.stringify(user),
+          headers: {
+              'Content-Type': 'application/json'
+          }
+      }
+  fetch('/email/', options)      
+  .then(data => {
+      // function (response) {
+      console.log('response de requette :'+ data.ok)
+      if(data.ok) {
+      //On supprime le mot de passe du tableau
+          console.log('message de confirmation envoyé');
+      } 
+  }) 
+  .catch(function(error) {
+  console.log('Il y a eu un problème avec l\'opération fetch: ' + error.message);
+  })
+  .finally(() => {
+          
+          // this.$refs.popupNotification.validNotification(titre,message);// Lance une methode du meme nom sur un composant enfant !
+          console.log(' l\'email t de '+ user.firstName + ' a bien été envoyé ! ')
+    //       setLoading(false);
+    // notify(firstName,email);
 
-  const submitHandler = () =>{
-    // if (!(/[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]+/.test(v)) && typeof v ==='string' && v.length >4)
-    // {
-    //   setUsernameError("")
-    //   return true
-    // }
-   
-    
+      });
+}
+
+
+const submitHandler = () =>{
+
     let contactMessage = {
       nom: document.getElementById('contact__nom').value,
       email: document.getElementById('contact__email').value,
       projet: document.getElementById('contact__projet').value,
       message: document.getElementById('contact__message').value
     }
+
     console.log(contactMessage);
 
     ///// VERIFICATION NOM :
+
     let namRegex = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?0-9]+/
-    console.log(namRegex.test(contactMessage.nom))
+
     if( contactMessage.nom === ""  && 
         !document.getElementById("contact__nom__error") ||
         namRegex.test(contactMessage.nom)
@@ -36,11 +77,14 @@ function insertAfter(referenceNode, newNode) {
       divError.setAttribute("id","contact__nom__error"); // on ajoute un id sur la div
       divError.innerHTML = ` <p type="text" name="name"  class="error__form" > <i class="fas fa-exclamation-triangle"></i> Votre nom n'est pas valide </p>`;
       var divInput = document.getElementById("div__contact__nom");
+      emailValidation.nom = false
       insertAfter(divInput, divError);
+      
     }
     else if(contactMessage.nom !== "" && document.getElementById("contact__nom__error") ){
       var divError = document.getElementById("contact__nom__error")
       divError.parentNode.removeChild(divError)
+      emailValidation.nom = true
       // divError.remove()
     } 
 
@@ -51,17 +95,16 @@ function insertAfter(referenceNode, newNode) {
       contactMessage.email.length <5 && 
       emailRe.test(contactMessage.email) === false &&
       !document.getElementById("contact__email__error") ||
-
       contactMessage.email.length > 5 && 
       emailRe.test(contactMessage.email) === false &&
       !document.getElementById("contact__email__error") 
-
       ){
       var divError = document.createElement("div"); // creer une 
       divError.setAttribute("id","contact__email__error"); // on ajoute un id sur la div
       divError.innerHTML = ` <p type="text" name="name"  class="error__form" > <i class="fas fa-exclamation-triangle"></i> Votre email n'est pas valide </p>`;
       var divInput = document.getElementById("div__contact__email");
       insertAfter(divInput, divError);
+      emailValidation.email = false
     }
     else if(document.getElementById("contact__email__error") &&
     contactMessage.email.length >5 && 
@@ -70,6 +113,7 @@ function insertAfter(referenceNode, newNode) {
     ){
       let divError = document.getElementById("contact__email__error")
       divError.parentNode.removeChild(divError)
+      emailValidation.email = true
       // divError.remove()
     } 
 
@@ -80,11 +124,12 @@ function insertAfter(referenceNode, newNode) {
       divError.innerHTML = ` <p type="text" name="name"  class="error__form" > <i class="fas fa-exclamation-triangle"></i> Votre projet n'est pas valide </p>`;
       var divInput = document.getElementById("div__contact__projet");
       insertAfter(divInput, divError);
+      emailValidation.projet = false
     }
     else if(document.getElementById("contact__projet__error") && contactMessage.projet !=="") {
       let divError = document.getElementById("contact__projet__error")
       divError.parentNode.removeChild(divError)
-      // divError.remove()
+      emailValidation.projet = true
     } 
 
     //// VERIFICATION MESSAGE :
@@ -96,40 +141,28 @@ function insertAfter(referenceNode, newNode) {
       divError.innerHTML = ` <p type="text" name="name"  class="error__form" > <i class="fas fa-exclamation-triangle"></i> Votre message n'est pas valide, il doit faire plus de 50 caractères </p>`;
       var divInput = document.getElementById("div__contact__message");
       insertAfter(divInput, divError);
+      emailValidation.message = false
     }
     else if(document.getElementById("contact__message__error") && contactMessage.message !=="" && contactMessage.message.length > 50 ) {
       let divError = document.getElementById("contact__message__error")
       divError.parentNode.removeChild(divError)
-      // divError.remove()
+      emailValidation.message = true
+      
     } 
+    console.log(emailValidation);
+
+    if( 
+      emailValidation.nom === true &&
+      emailValidation.email === true &&
+      emailValidation.projet ===  true &&
+      emailValidation.message ===  true
+    ){
+      sendEmailConfirm(contactMessage)
+    }
+
+
+  }
+
 
 
   
-    // event.preventDefault();
-    // console.log('ENVOI EN PLACE ', event);
-   
-    
-    // if( !formdata.name ){
-    //   setError(true);
-    //   setMessage('Le nom est requis');
-    // } else if( !formdata.email ){
-    //   setError(true);
-    //   setMessage('Email requis');
-      
-    // } else if( !(re.test(formdata.email) && formdata.email.length >4)){
-    //   setError(true);
-    //   setMessage('Le format de votre email est invalide');
-    // }else if( !formdata.subject ){
-    //   setError(true);
-    //   setMessage('Le sujet est requis');
-    // } else if( !formdata.message ){
-    //   setError(true);
-    //   setMessage('le message est requis');
-    // } else{
-    //   setError(false);
-    //   messageGmail.from = formdata.message;
-    //   messageGmail.subject = formdata.subject;
-    //   setLoading(true);
-    //   sendEmailConfirm(formdata.email, formdata.name,formdata.message, formdata.subject);
-    // }
-  }
