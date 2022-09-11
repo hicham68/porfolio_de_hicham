@@ -420,7 +420,7 @@ header{
 }
 .skills__arrow{
     margin-left: auto;
-    transition: .4;
+    transition: .4s;
 }
 .skills__titles{
     display: flex;
@@ -448,25 +448,28 @@ header{
     background-color: var(--first-color);
 }
 .skills__html{
-    width: 90%;
-}
-.skills__css{
     width: 80%;
 }
+.skills__css{
+    width: 50%;
+}
 .skills__js{
-    width: 70%;
+    width: 50%;
 }
 .skills__php{
     width: 70%;
 }
-.skills__node{
-    width: 80%;
+.skills__symfony{
+    width: 60%;
 }
-.skills__firebase{
-    width: 70%;
+.skills__mysql {
+    width: 60%;
+}
+.skills__java{
+    width: 30%;
 }
 .skills__photoshop{
-    width: 70%;
+    width: 40%;
 }
 .skills__close .skills__list{
     height: 0;
