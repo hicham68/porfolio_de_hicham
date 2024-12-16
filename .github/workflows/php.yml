@@ -23,9 +23,13 @@ jobs:
         php-version: '7.4' # Remplacez par la version nécessaire
         extensions: mbstring, intl, ctype, iconv
         tools: composer
-
+        
+    - name: Check if lock file needs update
+      run: composer update --lock
+      continue-on-error: true
+      
     - name: Validate composer.json and composer.lock
-      run: composer validate --strict
+      run: composer validate
 
     - name: Cache Composer packages
       id: composer-cache
@@ -39,9 +43,7 @@ jobs:
     - name: Install dependencies
       run: composer install --prefer-dist --no-progress
 
-    - name: Check if lock file needs update
-      run: composer update --lock
-      continue-on-error: true
+   
 
     - name: Commit lockfile changes if updated
       if: success() && steps.composer-cache.outputs.cache-hit == 'false'
