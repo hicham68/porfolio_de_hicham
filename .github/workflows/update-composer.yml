@@ -1,0 +1,38 @@
+name: Update Composer
+
+on:
+  push:
+    branches:
+      - main # Adapte cela à la branche de ton projet
+
+jobs:
+  update-dependencies:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.1' # Adapte à ta version de PHP
+          extensions: mbstring, json, curl
+
+      - name: Install Composer
+        run: |
+          composer install
+
+      - name: Update Composer dependencies
+        run: |
+          composer update
+
+      - name: Commit and push changes
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git config --global user.name "GitHub Actions"
+          git config --global user.email "actions@github.com"
+          git add composer.lock
+          git commit -m "Update Composer dependencies"
+          git push
