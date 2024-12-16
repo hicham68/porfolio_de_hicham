@@ -2,12 +2,12 @@ name: PHP Composer
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [ "main", "hicham68-patch-2" ]
   pull_request:
-    branches: [ "main" ]
+    branches: [ "main", "hicham68-patch-2" ]
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
   build:
@@ -16,6 +16,13 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
+
+    - name: Set up PHP
+      uses: shivammathur/setup-php@v2
+      with:
+        php-version: '7.4' # Remplacez par la version nécessaire
+        extensions: mbstring, intl, ctype, iconv
+        tools: composer
 
     - name: Validate composer.json and composer.lock
       run: composer validate --strict
@@ -32,8 +39,11 @@ jobs:
     - name: Install dependencies
       run: composer install --prefer-dist --no-progress
 
-    # Add a test script to composer.json, for instance: "test": "vendor/bin/phpunit"
-    # Docs: https://getcomposer.org/doc/articles/scripts.md
+    - name: Check if lock file needs update
+      run: composer update --lock
+      continue-on-error: true
 
-    # - name: Run test suite
-    #   run: composer run-script test
+    - name: Commit lockfile changes if updated
+      if: success() && steps.composer-cache.outputs.cache-hit == 'false'
+      run: |
+        git config --global user.name
