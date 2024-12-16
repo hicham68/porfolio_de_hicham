@@ -49,4 +49,4 @@ jobs:
     - name: Commit lockfile changes if updated
       if: success() && steps.composer-cache.outputs.cache-hit == 'false'
       run: |
-        git config --global user.name
+        git config --global user.name "hicham"
